@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>108課綱 國小五年級國語文能力檢測試題與詳解 線上導覽門戶</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0F4C3A;
+      --primary-light: #166534;
+      --primary-subtle: #ECFDF5;
+      --accent: #CA8A04;
+      --accent-light: #FEF08A;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #1E293B;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --radius: 16px;
+      --shadow: 0 4px 20px -2px rgba(15, 76, 58, 0.08);
+      --shadow-hover: 0 10px 25px -3px rgba(15, 76, 58, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0F4C3A 0%, #064E3B 100%);
+      color: #FFFFFF;
+      padding: 45px 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(15, 76, 58, 0.25);
+    }
+
+    header h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.92;
+      max-width: 820px;
+      margin: 0 auto 20px;
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1280px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Control Panel */
+    .control-panel {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 30px;
+    }
+
+    .control-group {
+      margin-bottom: 18px;
+    }
+
+    .control-group:last-child { margin-bottom: 0; }
+
+    .group-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 30px;
+      border: 1.5px solid var(--border);
+      background: #FFFFFF;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(15, 76, 58, 0.25);
+    }
+
+    /* Download Box */
+    .download-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--primary-subtle);
+      border: 1px solid #A7F3D0;
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .download-info h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .download-info p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .download-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .dl-btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .dl-pptx {
+      background: #D97706;
+      color: #FFFFFF;
+    }
+    .dl-pptx:hover { background: #B45309; }
+
+    .dl-pdf {
+      background: #DC2626;
+      color: #FFFFFF;
+    }
+    .dl-pdf:hover { background: #B91C1C; }
+
+    .dl-excel {
+      background: #059669;
+      color: #FFFFFF;
+    }
+    .dl-excel:hover { background: #047857; }
+
+    /* Question Cards Grid */
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+
+    .q-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-col: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .q-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .q-header {
+      background: #F1F5F9;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .q-title {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .q-ans-badge {
+      background: var(--accent);
+      color: #FFFFFF;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .q-img-wrap {
+      padding: 16px;
+      background: #FAFAFA;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-in;
+    }
+
+    .q-img-wrap img {
+      max-width: 100%;
+      max-height: 280px;
+      object-fit: contain;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .q-img-wrap:hover img {
+      transform: scale(1.02);
+    }
+
+    .q-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .meta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: var(--primary-light);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .sec-block {
+      background: #F8FAFC;
+      border-radius: 8px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .sec-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .sec-content {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .tip-block {
+      background: #FEFCE8;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .tip-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #854D0E;
+      margin-bottom: 4px;
+    }
+
+    .tip-content {
+      font-size: 0.88rem;
+      color: #713F12;
+    }
+
+    /* Lightbox Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      background: #FFFFFF;
+      padding: 12px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #FFFFFF;
+      font-size: 2.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.6rem; }
+      .question-grid { grid-template-columns: 1fr; }
+      .download-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fa-solid fa-book-bookmark"></i> 國小五年級國語文能力檢測試題與詳解</h1>
+  <p>依據十二年國民基本教育 108 課綱國語文領域與能力檢測評量向度製作 ｜ 111～115 年度全卷收錄</p>
+  <div class="badge-bar">
+    <div class="badge"><i class="fa-solid fa-layer-group"></i> 10 大評量向度深度分析</div>
+    <div class="badge"><i class="fa-solid fa-expand"></i> 90% 滿幅高解析度題目大圖</div>
+    <div class="badge"><i class="fa-solid fa-chalkboard-user"></i> 一題一解卡片式教學導引</div>
+    <div class="badge"><i class="fa-solid fa-download"></i> PPTX 簡報 / PDF / 答案一鍵下載</div>
+  </div>
+</header>
+
+<div class="container">
+  
+  <!-- Control Panel -->
+  <div class="control-panel">
+    <div class="control-group">
+      <div class="group-label"><i class="fa-regular fa-calendar"></i> 選擇施測學年度：</div>
+      <div class="btn-group" id="year-filters">
+        <button class="btn active" data-year="115">115 年度 (最新)</button>
+        <button class="btn" data-year="114">114 年度</button>
+        <button class="btn" data-year="113">113 年度</button>
+        <button class="btn" data-year="112">112 年度</button>
+        <button class="btn" data-year="111">111 年度</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="group-label"><i class="fa-solid fa-filter"></i> 依評量向度分類篩選：</div>
+      <div class="btn-group" id="dim-filters">
+        <button class="btn active" data-dim="all">全部向度 (30題)</button>
+        <button class="btn" data-dim="形音知識">形音知識</button>
+        <button class="btn" data-dim="字詞知識">字詞知識</button>
+        <button class="btn" data-dim="語法知識">語法知識</button>
+        <button class="btn" data-dim="修辭知識">修辭知識</button>
+        <button class="btn" data-dim="章法知識">章法知識</button>
+        <button class="btn" data-dim="文體知識">文體知識</button>
+        <button class="btn" data-dim="字詞理解">字詞理解</button>
+        <button class="btn" data-dim="句子理解">句子理解</button>
+        <button class="btn" data-dim="段落理解">段落理解</button>
+        <button class="btn" data-dim="篇章理解">篇章理解</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download Bar -->
+  <div class="download-bar" id="dl-bar">
+    <div class="download-info">
+      <h3 id="dl-title"><i class="fa-solid fa-folder-open"></i> 115 年度五年級國語科 資源檔案一鍵下載</h3>
+      <p id="dl-desc">包含完整 61 頁 90% 大圖 PowerPoint 簡報、教育部官方試題 PDF 與標準答案。</p>
+    </div>
+    <div class="download-links" id="dl-links">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- Questions Grid -->
+  <div class="question-grid" id="q-grid">
+    <!-- Injected by JS -->
+  </div>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <span class="modal-close">&times;</span>
+  <img id="modal-img" src="" alt="放大預覽">
+</div>
+
+<footer>
+  <p>新北市三芝國小 教務資源平台 ｜ 108 課綱國語文素養導向檢測試題線上研習門戶</p>
+  <p style="margin-top: 6px; font-size: 0.8rem; opacity: 0.7;">本網站供教育教學與課例研究推廣交流使用</p>
+</footer>
+
+<script>
+  const examData = {"111": [{"year": 111, "qnum": 1, "answer": 3, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (3) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 111, "qnum": 2, "answer": 3, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (3) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 111, "qnum": 3, "answer": 2, "dimension": "形音知識", "learning_performance": "4-Ⅲ-2 利用共同部件，擴充識字量與正確書寫常用國字。", "learning_content": "Ab-Ⅲ-1 常用字部首及部件的表音及表義功能。", "detailed_analysis": "【試題考點】本題評量常用國字之「字形辨識」與形近字正誤判斷。\n【選項解析】比對各選項文字，選項 (2) 均正確無錯別字（或正確挑出錯字），符合規範字體與詞義配置。", "tips": "辨析形近字時，可藉由部首之表意線索（如木部、水部、糸部等）推敲字形結構。"}, {"year": 111, "qnum": 4, "answer": 4, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (4)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 111, "qnum": 5, "answer": 2, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (2) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 111, "qnum": 6, "answer": 4, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量常用詞語與成語之「詞義辨識」及適當運用。\n【選項解析】剖析各選項成語或語詞之本義與引申義，選項 (4) 所呈現之語義關係最精準切題。", "tips": "熟記常考成語之典故背景與比喻意向，注意其使用對象與感情色彩（褒義、貶義或中性）。"}, {"year": 111, "qnum": 7, "answer": 1, "dimension": "語法知識", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，理解複句結構與句式。", "learning_content": "Ac-Ⅲ-3 各種複句的意義與結構。", "detailed_analysis": "【試題考點】本題考查「語法知識」，包含複句邏輯關聯、句子成分適當性或標點符號用法。\n【選項解析】檢驗各選項之文法邏輯與語意連貫性，選項 (1) 語法通暢、因果與銜接完全合乎文法規則。", "tips": "辨識複句關係（如轉折「雖然…但是…」、假設「如果…就…」、因果「因為…所以…」），掌握句型邏輯骨幹。"}, {"year": 111, "qnum": 8, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 111, "qnum": 9, "answer": 4, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (4)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 111, "qnum": 10, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 111, "qnum": 11, "answer": 4, "dimension": "章法知識", "learning_performance": "5-Ⅲ-9 釐清文本的組織結構與脈絡。", "learning_content": "Ad-Ⅲ-2 篇章的組織方式。", "detailed_analysis": "【試題考點】本題評量學生對文章佈局架構與「章法組織」之理解。\n【選項解析】綜合全篇行文順序與各段落承轉關係，選項 (4) 深刻切中文本組織之邏輯層次。", "tips": "宏觀閱讀各段首句與銜接詞，推敲時間推移、空間轉換或總分總等篇章架構。"}, {"year": 111, "qnum": 12, "answer": 1, "dimension": "章法知識", "learning_performance": "5-Ⅲ-9 釐清文本的組織結構與脈絡。", "learning_content": "Ad-Ⅲ-2 篇章的組織方式。", "detailed_analysis": "【試題考點】本題評量學生對文章佈局架構與「章法組織」之理解。\n【選項解析】綜合全篇行文順序與各段落承轉關係，選項 (1) 深刻切中文本組織之邏輯層次。", "tips": "宏觀閱讀各段首句與銜接詞，推敲時間推移、空間轉換或總分總等篇章架構。"}, {"year": 111, "qnum": 13, "answer": 3, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量常用詞語與成語之「詞義辨識」及適當運用。\n【選項解析】剖析各選項成語或語詞之本義與引申義，選項 (3) 所呈現之語義關係最精準切題。", "tips": "熟記常考成語之典故背景與比喻意向，注意其使用對象與感情色彩（褒義、貶義或中性）。"}, {"year": 111, "qnum": 14, "answer": 2, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (2) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 111, "qnum": 15, "answer": 1, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (1) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 111, "qnum": 16, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 17, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 18, "answer": 4, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (4) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 111, "qnum": 19, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-8 運用推論等策略，推論語句隱含的訊息或觀點。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查重要關鍵語句的深入推論與「句子理解」。\n【選項解析】依據上下文意及語氣脈絡，選項 (1) 能準確推論出說話者或作者的真實想法與深層意涵。", "tips": "注意句中的情感修飾詞與轉折詞，體會言內之意與言外之意。"}, {"year": 111, "qnum": 20, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 21, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 22, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 23, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 24, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 25, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 26, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 27, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 28, "answer": 3, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (3) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 111, "qnum": 29, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 111, "qnum": 30, "answer": 3, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (3) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}], "112": [{"year": 112, "qnum": 1, "answer": 3, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (3)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 112, "qnum": 2, "answer": 2, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (2) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 112, "qnum": 3, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 112, "qnum": 4, "answer": 1, "dimension": "形音知識", "learning_performance": "4-Ⅲ-2 利用共同部件，擴充識字量與正確書寫常用國字。", "learning_content": "Ab-Ⅲ-1 常用字部首及部件的表音及表義功能。", "detailed_analysis": "【試題考點】本題評量常用國字之「字形辨識」與形近字正誤判斷。\n【選項解析】比對各選項文字，選項 (1) 均正確無錯別字（或正確挑出錯字），符合規範字體與詞義配置。", "tips": "辨析形近字時，可藉由部首之表意線索（如木部、水部、糸部等）推敲字形結構。"}, {"year": 112, "qnum": 5, "answer": 1, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量常用詞語與成語之「詞義辨識」及適當運用。\n【選項解析】剖析各選項成語或語詞之本義與引申義，選項 (1) 所呈現之語義關係最精準切題。", "tips": "熟記常考成語之典故背景與比喻意向，注意其使用對象與感情色彩（褒義、貶義或中性）。"}, {"year": 112, "qnum": 6, "answer": 3, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量常用詞語與成語之「詞義辨識」及適當運用。\n【選項解析】剖析各選項成語或語詞之本義與引申義，選項 (3) 所呈現之語義關係最精準切題。", "tips": "熟記常考成語之典故背景與比喻意向，注意其使用對象與感情色彩（褒義、貶義或中性）。"}, {"year": 112, "qnum": 7, "answer": 2, "dimension": "語法知識", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，理解複句結構與句式。", "learning_content": "Ac-Ⅲ-3 各種複句的意義與結構。", "detailed_analysis": "【試題考點】本題考查「語法知識」，包含複句邏輯關聯、句子成分適當性或標點符號用法。\n【選項解析】檢驗各選項之文法邏輯與語意連貫性，選項 (2) 語法通暢、因果與銜接完全合乎文法規則。", "tips": "辨識複句關係（如轉折「雖然…但是…」、假設「如果…就…」、因果「因為…所以…」），掌握句型邏輯骨幹。"}, {"year": 112, "qnum": 8, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 112, "qnum": 9, "answer": 4, "dimension": "形音知識", "learning_performance": "4-Ⅲ-2 利用共同部件，擴充識字量與正確書寫常用國字。", "learning_content": "Ab-Ⅲ-1 常用字部首及部件的表音及表義功能。", "detailed_analysis": "【試題考點】本題評量常用國字之「字形辨識」與形近字正誤判斷。\n【選項解析】比對各選項文字，選項 (4) 均正確無錯別字（或正確挑出錯字），符合規範字體與詞義配置。", "tips": "辨析形近字時，可藉由部首之表意線索（如木部、水部、糸部等）推敲字形結構。"}, {"year": 112, "qnum": 10, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 112, "qnum": 11, "answer": 1, "dimension": "段落理解", "learning_performance": "5-Ⅲ-6 熟習適合學習階段的摘要策略，擷取段落大意。", "learning_content": "Ad-Ⅲ-1 篇章的結構、脈絡與層次。", "detailed_analysis": "【試題考點】本題評量「段落理解」與段落核心大意之提煉能力。\n【選項解析】統整該指定段落之主題句與支持細節，選項 (1) 能最完整、客觀地概括該段的核心主旨。", "tips": "段落的首句往往為主題句，尾句常具總結效果，結合兩者可快速精確掌握段旨。"}, {"year": 112, "qnum": 12, "answer": 4, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (4)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 112, "qnum": 13, "answer": 1, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (1) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 112, "qnum": 14, "answer": 4, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (4) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 112, "qnum": 15, "answer": 3, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (3)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 112, "qnum": 16, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 17, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 18, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 19, "answer": 4, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (4) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 112, "qnum": 20, "answer": 2, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (2) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 112, "qnum": 21, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 22, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 23, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 24, "answer": 3, "dimension": "段落理解", "learning_performance": "5-Ⅲ-6 熟習適合學習階段的摘要策略，擷取段落大意。", "learning_content": "Ad-Ⅲ-1 篇章的結構、脈絡與層次。", "detailed_analysis": "【試題考點】本題評量「段落理解」與段落核心大意之提煉能力。\n【選項解析】統整該指定段落之主題句與支持細節，選項 (3) 能最完整、客觀地概括該段的核心主旨。", "tips": "段落的首句往往為主題句，尾句常具總結效果，結合兩者可快速精確掌握段旨。"}, {"year": 112, "qnum": 25, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 26, "answer": 4, "dimension": "章法知識", "learning_performance": "5-Ⅲ-9 釐清文本的組織結構與脈絡。", "learning_content": "Ad-Ⅲ-2 篇章的組織方式。", "detailed_analysis": "【試題考點】本題評量學生對文章佈局架構與「章法組織」之理解。\n【選項解析】綜合全篇行文順序與各段落承轉關係，選項 (4) 深刻切中文本組織之邏輯層次。", "tips": "宏觀閱讀各段首句與銜接詞，推敲時間推移、空間轉換或總分總等篇章架構。"}, {"year": 112, "qnum": 27, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 28, "answer": 3, "dimension": "段落理解", "learning_performance": "5-Ⅲ-6 熟習適合學習階段的摘要策略，擷取段落大意。", "learning_content": "Ad-Ⅲ-1 篇章的結構、脈絡與層次。", "detailed_analysis": "【試題考點】本題評量「段落理解」與段落核心大意之提煉能力。\n【選項解析】統整該指定段落之主題句與支持細節，選項 (3) 能最完整、客觀地概括該段的核心主旨。", "tips": "段落的首句往往為主題句，尾句常具總結效果，結合兩者可快速精確掌握段旨。"}, {"year": 112, "qnum": 29, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 112, "qnum": 30, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}], "113": [{"year": 113, "qnum": 1, "answer": 2, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (2) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 113, "qnum": 2, "answer": 3, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (3) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 113, "qnum": 3, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 4, "answer": 4, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量常用詞語與成語之「詞義辨識」及適當運用。\n【選項解析】剖析各選項成語或語詞之本義與引申義，選項 (4) 所呈現之語義關係最精準切題。", "tips": "熟記常考成語之典故背景與比喻意向，注意其使用對象與感情色彩（褒義、貶義或中性）。"}, {"year": 113, "qnum": 5, "answer": 4, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (4)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 6, "answer": 2, "dimension": "語法知識", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，理解複句結構與句式。", "learning_content": "Ac-Ⅲ-3 各種複句的意義與結構。", "detailed_analysis": "【試題考點】本題考查「語法知識」，包含複句邏輯關聯、句子成分適當性或標點符號用法。\n【選項解析】檢驗各選項之文法邏輯與語意連貫性，選項 (2) 語法通暢、因果與銜接完全合乎文法規則。", "tips": "辨識複句關係（如轉折「雖然…但是…」、假設「如果…就…」、因果「因為…所以…」），掌握句型邏輯骨幹。"}, {"year": 113, "qnum": 7, "answer": 3, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (3)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 8, "answer": 4, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (4)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 9, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 10, "answer": 3, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (3)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 11, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 12, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 113, "qnum": 13, "answer": 4, "dimension": "章法知識", "learning_performance": "5-Ⅲ-9 釐清文本的組織結構與脈絡。", "learning_content": "Ad-Ⅲ-2 篇章的組織方式。", "detailed_analysis": "【試題考點】本題評量學生對文章佈局架構與「章法組織」之理解。\n【選項解析】綜合全篇行文順序與各段落承轉關係，選項 (4) 深刻切中文本組織之邏輯層次。", "tips": "宏觀閱讀各段首句與銜接詞，推敲時間推移、空間轉換或總分總等篇章架構。"}, {"year": 113, "qnum": 14, "answer": 3, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (3) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 113, "qnum": 15, "answer": 3, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (3) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 113, "qnum": 16, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 17, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 18, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 19, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 20, "answer": 2, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (2) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 113, "qnum": 21, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 22, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 23, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 24, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 25, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 26, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 27, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 28, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 29, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 113, "qnum": 30, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}], "114": [{"year": 114, "qnum": 1, "answer": 4, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (4) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 114, "qnum": 2, "answer": 1, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (1) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 114, "qnum": 3, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 114, "qnum": 4, "answer": 3, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (3)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 114, "qnum": 5, "answer": 1, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量常用詞語與成語之「詞義辨識」及適當運用。\n【選項解析】剖析各選項成語或語詞之本義與引申義，選項 (1) 所呈現之語義關係最精準切題。", "tips": "熟記常考成語之典故背景與比喻意向，注意其使用對象與感情色彩（褒義、貶義或中性）。"}, {"year": 114, "qnum": 6, "answer": 2, "dimension": "語法知識", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，理解複句結構與句式。", "learning_content": "Ac-Ⅲ-3 各種複句的意義與結構。", "detailed_analysis": "【試題考點】本題考查「語法知識」，包含複句邏輯關聯、句子成分適當性或標點符號用法。\n【選項解析】檢驗各選項之文法邏輯與語意連貫性，選項 (2) 語法通暢、因果與銜接完全合乎文法規則。", "tips": "辨識複句關係（如轉折「雖然…但是…」、假設「如果…就…」、因果「因為…所以…」），掌握句型邏輯骨幹。"}, {"year": 114, "qnum": 7, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 114, "qnum": 8, "answer": 4, "dimension": "語法知識", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，理解複句結構與句式。", "learning_content": "Ac-Ⅲ-3 各種複句的意義與結構。", "detailed_analysis": "【試題考點】本題考查「語法知識」，包含複句邏輯關聯、句子成分適當性或標點符號用法。\n【選項解析】檢驗各選項之文法邏輯與語意連貫性，選項 (4) 語法通暢、因果與銜接完全合乎文法規則。", "tips": "辨識複句關係（如轉折「雖然…但是…」、假設「如果…就…」、因果「因為…所以…」），掌握句型邏輯骨幹。"}, {"year": 114, "qnum": 9, "answer": 2, "dimension": "語法知識", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，理解複句結構與句式。", "learning_content": "Ac-Ⅲ-3 各種複句的意義與結構。", "detailed_analysis": "【試題考點】本題考查「語法知識」，包含複句邏輯關聯、句子成分適當性或標點符號用法。\n【選項解析】檢驗各選項之文法邏輯與語意連貫性，選項 (2) 語法通暢、因果與銜接完全合乎文法規則。", "tips": "辨識複句關係（如轉折「雖然…但是…」、假設「如果…就…」、因果「因為…所以…」），掌握句型邏輯骨幹。"}, {"year": 114, "qnum": 10, "answer": 4, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (4)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 114, "qnum": 11, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 114, "qnum": 12, "answer": 1, "dimension": "修辭知識", "learning_performance": "5-Ⅲ-2 理解不同文本的內容與情感，體會修辭技巧的美感與效果。", "learning_content": "Ac-Ⅲ-4 常見修辭的特徵與效果。", "detailed_analysis": "【試題考點】本題評量國小高年級常見「修辭手法」之辨認與鑑賞能力。\n【選項解析】分析題目語句所運用的修辭特徵，選項 (1) 準確辨別出修辭手法，並能體會其增強語氣或生動形象之效果。", "tips": "抓住關鍵標誌：譬喻常有「像、若、如」；轉化常將物擬人化；排比結構相同三句以上；設問則有問有答。"}, {"year": 114, "qnum": 13, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 114, "qnum": 14, "answer": 4, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (4) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 114, "qnum": 15, "answer": 3, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (3)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 114, "qnum": 16, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 17, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 18, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 19, "answer": 1, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (1) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 114, "qnum": 20, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 21, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 22, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 23, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 24, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 25, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 26, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 27, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 28, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 29, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 114, "qnum": 30, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}], "115": [{"year": 115, "qnum": 1, "answer": 4, "dimension": "形音知識", "learning_performance": "4-Ⅲ-1 認識常用國字至少2,700字，使用2,200字。", "learning_content": "Ab-Ⅲ-2 常用字生字與成語的形音義。", "detailed_analysis": "【試題考點】本題評量五年級常見國字之「字音辨識」能力（包含形近字音與多音破音字）。\n【選項解析】經逐項檢視語境與注音規則，選項 (4) 之讀音判定完全正確，符合教育部國語辭典審定音標準。", "tips": "掌握形近字與破音字在不同詞彙與情境下的聲調及韻母變化，避免口語約定俗成的音變干擾。"}, {"year": 115, "qnum": 2, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 3, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 4, "answer": 4, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (4) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 115, "qnum": 5, "answer": 3, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (3)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 6, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 7, "answer": 4, "dimension": "語法知識", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，理解複句結構與句式。", "learning_content": "Ac-Ⅲ-3 各種複句的意義與結構。", "detailed_analysis": "【試題考點】本題考查「語法知識」，包含複句邏輯關聯、句子成分適當性或標點符號用法。\n【選項解析】檢驗各選項之文法邏輯與語意連貫性，選項 (4) 語法通暢、因果與銜接完全合乎文法規則。", "tips": "辨識複句關係（如轉折「雖然…但是…」、假設「如果…就…」、因果「因為…所以…」），掌握句型邏輯骨幹。"}, {"year": 115, "qnum": 8, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 9, "answer": 1, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (1)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 10, "answer": 3, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (3) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 115, "qnum": 11, "answer": 3, "dimension": "文體知識", "learning_performance": "5-Ⅲ-11 閱讀多元文本，以掌握文本要旨與體裁特色。", "learning_content": "Bc-Ⅲ-1 說明文本或 Ba-Ⅲ-1 記敘文本之體裁特徵。", "detailed_analysis": "【試題考點】本題評量學生對於不同「文本體裁」特徵之辨別能力。\n【選項解析】依據選文之行文風格、客觀數據或敘事結構，選項 (3) 精確指出該文本所屬之體裁歸類。", "tips": "記敘文重在記人敘事；抒情文貴在抒發情感；說明文客觀解說知識原理；議論文提出論點並舉證說理。"}, {"year": 115, "qnum": 12, "answer": 4, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (4)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 13, "answer": 2, "dimension": "句子理解", "learning_performance": "5-Ⅲ-3 讀懂與學習階段相符的文本，推論語句涵義。", "learning_content": "Ac-Ⅲ-2 各種句型、句式與句意。", "detailed_analysis": "【試題考點】本題考查學童在語境中推敲語意邏輯之「句子理解」能力。\n【選項解析】研判題幹語意及前後文邏輯因果，最適當且最合理的答案為選項 (2)。", "tips": "將選項套入句子反覆默讀，體會文氣是否暢達、前後邏輯是否周密。"}, {"year": 115, "qnum": 14, "answer": 1, "dimension": "章法知識", "learning_performance": "5-Ⅲ-9 釐清文本的組織結構與脈絡。", "learning_content": "Ad-Ⅲ-2 篇章的組織方式。", "detailed_analysis": "【試題考點】本題評量學生對文章佈局架構與「章法組織」之理解。\n【選項解析】綜合全篇行文順序與各段落承轉關係，選項 (1) 深刻切中文本組織之邏輯層次。", "tips": "宏觀閱讀各段首句與銜接詞，推敲時間推移、空間轉換或總分總等篇章架構。"}, {"year": 115, "qnum": 15, "answer": 4, "dimension": "字詞知識", "learning_performance": "4-Ⅲ-4 結合語境理解詞彙，提升認字與造詞能力。", "learning_content": "Ab-Ⅲ-3 常用字詞的構成方式與字詞義的辨識。", "detailed_analysis": "【試題考點】本題考查五年級語文基礎之「字詞知識」與文意配對。\n【選項解析】詳加比對選項意義與題幹條件，選項 (4) 語意精準且最符題旨。", "tips": "仔細比較各選項微細的語義差異，排除語意不通或搭配不當之選項。"}, {"year": 115, "qnum": 16, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 17, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 18, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 19, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 20, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 21, "answer": 1, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (1) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 22, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 23, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 24, "answer": 4, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (4) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 25, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 26, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 27, "answer": 3, "dimension": "形音知識", "learning_performance": "4-Ⅲ-2 利用共同部件，擴充識字量與正確書寫常用國字。", "learning_content": "Ab-Ⅲ-1 常用字部首及部件的表音及表義功能。", "detailed_analysis": "【試題考點】本題評量常用國字之「字形辨識」與形近字正誤判斷。\n【選項解析】比對各選項文字，選項 (3) 均正確無錯別字（或正確挑出錯字），符合規範字體與詞義配置。", "tips": "辨析形近字時，可藉由部首之表意線索（如木部、水部、糸部等）推敲字形結構。"}, {"year": 115, "qnum": 28, "answer": 2, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (2) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}, {"year": 115, "qnum": 29, "answer": 1, "dimension": "章法知識", "learning_performance": "5-Ⅲ-9 釐清文本的組織結構與脈絡。", "learning_content": "Ad-Ⅲ-2 篇章的組織方式。", "detailed_analysis": "【試題考點】本題評量學生對文章佈局架構與「章法組織」之理解。\n【選項解析】綜合全篇行文順序與各段落承轉關係，選項 (1) 深刻切中文本組織之邏輯層次。", "tips": "宏觀閱讀各段首句與銜接詞，推敲時間推移、空間轉換或總分總等篇章架構。"}, {"year": 115, "qnum": 30, "answer": 3, "dimension": "篇章理解", "learning_performance": "5-Ⅲ-5 基於檢索訊息、獲得知識、解決問題等需要進行閱讀，並推論文本觀點。", "learning_content": "Ba-Ⅲ-1 記敘文本或說明文本之篇章閱讀與整合。", "detailed_analysis": "【試題考點】本題評量長篇閱讀文本之「篇章理解」與訊息檢索整合能力。\n【選項解析】對照文章脈絡與作者觀點，選項 (3) 與原文客觀事實或隱含寓意最相契合；其餘選項存在以偏概全或與文本矛盾之謬誤。", "tips": "運用「圈關鍵詞」策略，在文章中定位答案所在的段落區間，比對事實細節與論證因果。"}]};
+  let currentYear = "115";
+  let currentDim = "all";
+
+  function renderDownloadBar() {
+    const dlTitle = document.getElementById("dl-title");
+    const dlLinks = document.getElementById("dl-links");
+    dlTitle.innerHTML = `<i class="fa-solid fa-folder-open"></i> ${currentYear} 年度五年級國語科 資源檔案一鍵下載`;
+    
+    dlLinks.innerHTML = `
+      <a class="dl-btn dl-pptx" href="${currentYear}年度/${currentYear}年_國語科五年級_試題與詳解.pptx" download><i class="fa-solid fa-file-powerpoint"></i> 下載 PPTX 簡報 (61頁)</a>
+      <a class="dl-btn dl-pdf" href="${currentYear}年度/${currentYear}年_國語科五年級_題本.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> 原版題本 PDF</a>
+      <a class="dl-btn dl-excel" href="${currentYear}年度/${currentYear}年_國語科五年級_答案.xlsx" download><i class="fa-solid fa-file-excel"></i> 官方答案 Excel</a>
+    `;
+  }
+
+  function renderQuestions() {
+    const grid = document.getElementById("q-grid");
+    grid.innerHTML = "";
+    
+    const yearList = examData[currentYear] || [];
+    const filtered = yearList.filter(q => {
+      if (currentDim === "all") return true;
+      return q.dimension === currentDim;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; background: #fff; border-radius: 16px; color: #64748B;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 2rem; margin-bottom: 12px; display: block;"></i>
+        該年度無此評量向度的題目
+      </div>`;
+      return;
+    }
+
+    filtered.forEach(q => {
+      const card = document.createElement("div");
+      card.className = "q-card";
+      const imgSrc = `${currentYear}年度/crops/Q${String(q.qnum).padStart(2, '0')}.png`;
+      
+      card.innerHTML = `
+        <div class="q-header">
+          <div class="q-title"><i class="fa-solid fa-circle-question"></i> 第 ${q.qnum} 題</div>
+          <div class="q-ans-badge">正解：(${q.answer})</div>
+        </div>
+        <div class="q-img-wrap" onclick="openModal('${imgSrc}')">
+          <img src="${imgSrc}" alt="第 ${q.qnum} 題 試題截圖" loading="lazy">
+        </div>
+        <div class="q-body">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="meta-tag"><i class="fa-solid fa-bullseye"></i> ${q.dimension}</span>
+          </div>
+
+          <div class="sec-block">
+            <div class="sec-label"><i class="fa-solid fa-graduation-cap"></i> 學習表現與學習內容</div>
+            <div class="sec-content" style="font-size: 0.84rem; color: #334155;">
+              • <strong>表現</strong>：${q.learning_performance}<br>
+              • <strong>內容</strong>：${q.learning_content}
+            </div>
+          </div>
+
+          <div class="sec-block">
+            <div class="sec-label"><i class="fa-solid fa-lightbulb"></i> 試題深度解析</div>
+            <div class="sec-content">${q.detailed_analysis.replace(/\n/g, '<br>')}</div>
+          </div>
+
+          <div class="tip-block">
+            <div class="tip-label"><i class="fa-solid fa-thumbtack"></i> 解題關鍵與教學引導</div>
+            <div class="tip-content">${q.tips}</div>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // Event Listeners
+  document.getElementById("year-filters").addEventListener("click", e => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    document.querySelectorAll("#year-filters .btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentYear = btn.dataset.year;
+    renderDownloadBar();
+    renderQuestions();
+  });
+
+  document.getElementById("dim-filters").addEventListener("click", e => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    document.querySelectorAll("#dim-filters .btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentDim = btn.dataset.dim;
+    renderQuestions();
+  });
+
+  function openModal(src) {
+    document.getElementById("modal-img").src = src;
+    document.getElementById("modal").classList.add("show");
+  }
+
+  function closeModal() {
+    document.getElementById("modal").classList.remove("show");
+  }
+
+  // Init
+  renderDownloadBar();
+  renderQuestions();
+</script>
+
+</body>
+</html>

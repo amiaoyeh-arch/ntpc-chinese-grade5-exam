@@ -1,0 +1,10 @@
+﻿.claude/
+.gemini/
+.vscode/
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*.log
+.~lock.*
+*lock*#
